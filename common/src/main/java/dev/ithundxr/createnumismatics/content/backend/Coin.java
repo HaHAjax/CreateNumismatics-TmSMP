@@ -19,7 +19,6 @@
 package dev.ithundxr.createnumismatics.content.backend;
 
 import com.google.common.collect.ImmutableList;
-import com.mojang.serialization.Codec;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.INamedIconOptions;
 import com.simibubi.create.foundation.gui.AllIcons;
 import dev.ithundxr.createnumismatics.config.NumismaticsConfig;
@@ -30,12 +29,9 @@ import io.netty.buffer.ByteBuf;
 import net.createmod.catnip.codecs.stream.CatnipStreamCodecBuilders;
 import net.createmod.catnip.data.Couple;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -51,7 +47,7 @@ import static dev.ithundxr.createnumismatics.registry.NumismaticsIcons.*;
  */
 
 public enum Coin implements INamedIconOptions {
-    SPUR(1, Rarity.COMMON, I_COIN_SPUR, I_COIN_SPUR_RED_LINE, "\uF011"),
+    TERACOIN(1, Rarity.COMMON, I_COIN_TERACOIN, I_COIN_TERACOIN_RED_LINE, "\uF011"),
     BEVEL(8, Rarity.COMMON, I_COIN_BEVEL, I_COIN_BEVEL_RED_LINE, "\uF012"), // 8 spurs
     SPROCKET(16, Rarity.COMMON, I_COIN_SPROCKET, I_COIN_SPROCKET_RED_LINE, "\uF013"), // 16 spurs, 2 bevels
     COG(64, Rarity.UNCOMMON, I_COIN_COG, I_COIN_COG_RED_LINE, "\uF014"), // 64 spurs, 8 bevels, 4 sprockets
@@ -101,7 +97,7 @@ public enum Coin implements INamedIconOptions {
      * @return Couple of (amount of this coin, remainder of spurs)
      */
     public Couple<Integer> convert(int amount) {
-        if (this == SPUR) return Couple.create(amount, 0);
+        if (this == TERACOIN) return Couple.create(amount, 0);
         int remainder = amount % value;
         int converted = (amount - remainder) / value;
         return Couple.create(converted, remainder);
@@ -114,7 +110,7 @@ public enum Coin implements INamedIconOptions {
      * @return Couple of (amount of this coin, remainder of spurs)
      */
     public Couple<Integer> convert(int amount, int max) {
-        if (this == SPUR) return Couple.create(amount, 0);
+        if (this == TERACOIN) return Couple.create(amount, 0);
         int remainder = amount % value;
         int converted = (amount - remainder) / value;
         if (converted > max) {
@@ -159,7 +155,7 @@ public enum Coin implements INamedIconOptions {
     }
 
     public Coin getDescription() {
-        return this.value < NumismaticsConfig.common().referenceCoin.get().value ? SPUR : NumismaticsConfig.common().referenceCoin.get();
+        return this.value < NumismaticsConfig.common().referenceCoin.get().value ? TERACOIN : NumismaticsConfig.common().referenceCoin.get();
     }
 
     public ItemStack asStack() {
@@ -171,7 +167,7 @@ public enum Coin implements INamedIconOptions {
     }
 
     public static Coin closest(int value) {
-        Coin closest = Coin.SPUR;
+        Coin closest = Coin.TERACOIN;
 
         for (Coin coin : values()) {
             if (Math.abs(coin.value - value) <= Math.abs(closest.value - value))

@@ -104,7 +104,7 @@ public class ViewCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name) {
-        return execute(ctx, account, type, create, name, Coin.SPUR);
+        return execute(ctx, account, type, create, name, Coin.TERACOIN);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, Coin coin) {
@@ -118,7 +118,7 @@ public class ViewCommand {
                     + coin.getName(coinCount) + "."), true);
             } else {
                 ctx.getSource().sendSuccess(() -> Component.literal(name + " has " + coinCount + " "
-                    + coin.getName(coinCount) + " and " + remainder + " " + Coin.SPUR.getName(remainder) + "."), true);
+                    + coin.getName(coinCount) + " and " + remainder + " " + Coin.TERACOIN.getName(remainder) + "."), true);
             }
             return coinCount;
         } else {

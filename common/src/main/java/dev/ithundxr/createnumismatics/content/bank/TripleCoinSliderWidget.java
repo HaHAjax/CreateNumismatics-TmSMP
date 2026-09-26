@@ -48,7 +48,7 @@ import static net.minecraft.client.gui.screens.Screen.hasShiftDown;
 public class TripleCoinSliderWidget extends AbstractSimiWidget {
 
     private static final Coin[] ROWS = new Coin[] {
-        Coin.SPUR,
+        Coin.TERACOIN,
         Coin.COG,
         Coin.SUN
     };

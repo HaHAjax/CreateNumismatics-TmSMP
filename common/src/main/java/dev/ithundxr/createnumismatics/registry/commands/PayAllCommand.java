@@ -49,7 +49,7 @@ public class PayAllCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, int amount) {
-        return execute(ctx, amount, Coin.SPUR);
+        return execute(ctx, amount, Coin.TERACOIN);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, int amount, Coin coin) {

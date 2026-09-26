@@ -249,7 +249,7 @@ public class SalepointPurchaseScreen extends AbstractSimiContainerScreen<Salepoi
         int spurs = referenceAndSpurs.getSecond();
 
         referenceCoin.getIcon().render(graphics, x+133, y+45);
-        Coin.SPUR.getIcon().render(graphics, x+133, y+63);
+        Coin.TERACOIN.getIcon().render(graphics, x+133, y+63);
 
         for (boolean spur : Iterate.falseAndTrue) {
             FormattedCharSequence seq = Component.literal(TextUtils.formatInt(spur ? spurs : reference))

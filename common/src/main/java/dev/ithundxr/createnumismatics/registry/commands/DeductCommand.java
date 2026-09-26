@@ -19,7 +19,6 @@
 package dev.ithundxr.createnumismatics.registry.commands;
 
 import com.mojang.authlib.GameProfile;
-import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -121,7 +120,7 @@ public class DeductCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount, boolean force) {
-        return execute(ctx, account, type, create, name, amount, force, Coin.SPUR);
+        return execute(ctx, account, type, create, name, amount, force, Coin.TERACOIN);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount, boolean force, Coin coin) {

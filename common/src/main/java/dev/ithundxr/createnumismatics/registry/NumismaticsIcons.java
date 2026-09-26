@@ -45,7 +45,7 @@ public class NumismaticsIcons extends AllIcons {
     private boolean isCoin = false;
 
     /*
-    SPUR(1, Rarity.COMMON),
+    TERACOIN(1, Rarity.COMMON),
     BEVEL(8, Rarity.COMMON), // 8 spurs
     SPROCKET(16, Rarity.COMMON), // 16 spurs, 2 bevels
     COG(64, Rarity.UNCOMMON), // 64 spurs, 8 bevels, 4 sprockets
@@ -54,7 +54,7 @@ public class NumismaticsIcons extends AllIcons {
      */
 
     public static final NumismaticsIcons
-        I_COIN_SPUR = newRow(),
+        I_COIN_TERACOIN = newRow(),
         I_COIN_BEVEL = next(),
         I_COIN_SPROCKET = next(),
         I_COIN_COG = next(),
@@ -63,7 +63,7 @@ public class NumismaticsIcons extends AllIcons {
     ;
 
     public static final NumismaticsIcons
-       I_COIN_SPUR_RED_LINE = newRow(),
+       I_COIN_TERACOIN_RED_LINE = newRow(),
        I_COIN_BEVEL_RED_LINE = next(),
        I_COIN_SPROCKET_RED_LINE = next(),
        I_COIN_COG_RED_LINE = next(),

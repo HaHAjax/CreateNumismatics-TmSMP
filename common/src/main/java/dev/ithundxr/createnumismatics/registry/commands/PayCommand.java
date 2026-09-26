@@ -113,7 +113,7 @@ public class PayCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount) {
-        return execute(ctx, account, type, create, name, amount, Coin.SPUR);
+        return execute(ctx, account, type, create, name, amount, Coin.TERACOIN);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount, Coin coin) {

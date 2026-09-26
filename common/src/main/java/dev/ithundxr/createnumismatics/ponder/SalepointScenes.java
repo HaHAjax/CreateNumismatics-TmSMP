@@ -331,7 +331,7 @@ public class SalepointScenes {
 
         for (int i = 1; i <= 3; i++) {
             final int finalI = i;
-            scenex.modifyScreen(menuC, $ -> $.screen().getVirtualHandle().setPrice(Coin.SPUR, finalI));
+            scenex.modifyScreen(menuC, $ -> $.screen().getVirtualHandle().setPrice(Coin.TERACOIN, finalI));
             scene.idle(5);
         }
 

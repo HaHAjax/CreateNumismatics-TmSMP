@@ -67,7 +67,7 @@ public class DepositorScenes {
             .placeNearTarget();
         scene.idle(30);
 
-        depositorSuccess(depositor, redstoneLamp, Coin.SPUR, scene, util);
+        depositorSuccess(depositor, redstoneLamp, Coin.TERACOIN, scene, util);
     }
 
     public static void redstone(SceneBuilder scene, SceneBuildingUtil util) {
@@ -104,7 +104,7 @@ public class DepositorScenes {
         scene.idle(20);
 
         // failure
-        depositorFailure(depositor, Coin.SPUR, scene, util);
+        depositorFailure(depositor, Coin.TERACOIN, scene, util);
         scene.idle(10);
 
         // unlock
@@ -146,7 +146,7 @@ public class DepositorScenes {
         int cascadeInterval = 7;
         InputWindowElement price = createElement(
             util.vector().topOf(depositor),
-            "amount_spaced_1x", Coin.SPUR.getIcon()
+            "amount_spaced_1x", Coin.TERACOIN.getIcon()
         );
         scene.addInstruction(new ShowInputInstruction(price, cascadeInterval * cascadeCount));
 
@@ -160,7 +160,7 @@ public class DepositorScenes {
         depositorFailure(depositor, Coin.BEVEL, scene, util);
         scene.idle(10);
 
-        depositorSuccess(depositor, redstoneLamp, Coin.SPUR, scene, util);
+        depositorSuccess(depositor, redstoneLamp, Coin.TERACOIN, scene, util);
         scene.idle(10);
 
         // convert to brass

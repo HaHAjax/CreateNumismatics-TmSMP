@@ -50,7 +50,7 @@ import java.util.List;
 
 public class AndesiteDepositorBlockEntity extends AbstractDepositorBlockEntity implements MenuProvider, WorldlyContainer {
 
-    private @NotNull Coin coin = Coin.SPUR;
+    private @NotNull Coin coin = Coin.TERACOIN;
 
     public AndesiteDepositorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);

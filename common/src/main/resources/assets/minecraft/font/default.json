@@ -2,7 +2,7 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/spur.png",
+      "file": "numismatics:item/coin/teracoin.png",
       "ascent": 8,
       "height": 10,
       "chars": [

@@ -104,7 +104,7 @@ public class GlobalBankManager {
             BankAccount account = new BankAccount(uuid, type);
 
             if (type == Type.PLAYER) {
-                account.deposit(Coin.SPUR, NumismaticsConfig.server().starterSpurs.get());
+                account.deposit(Coin.TERACOIN, NumismaticsConfig.server().starterSpurs.get());
                 account.deposit(Coin.BEVEL, NumismaticsConfig.server().starterBevels.get());
                 account.deposit(Coin.SPROCKET, NumismaticsConfig.server().starterSprockets.get());
                 account.deposit(Coin.COG, NumismaticsConfig.server().starterCogs.get());

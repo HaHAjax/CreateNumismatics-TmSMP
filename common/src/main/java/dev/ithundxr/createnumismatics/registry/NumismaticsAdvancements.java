@@ -19,7 +19,6 @@
 package dev.ithundxr.createnumismatics.registry;
 
 import com.google.common.collect.Sets;
-import com.simibubi.create.foundation.advancement.CreateAdvancement;
 import dev.ithundxr.createnumismatics.content.backend.Coin;
 import dev.ithundxr.createnumismatics.registry.advancement.NumismaticsAdvancement;
 import dev.ithundxr.createnumismatics.registry.advancement.NumismaticsAdvancement.Builder;
@@ -70,7 +69,7 @@ public class NumismaticsAdvancements implements DataProvider {
 		.special(SECRET)
 	),
 
-	QUESTIONABLE_INVESTMENT = create("questionable_investment", b -> b.icon(Coin.SPUR.asStack())
+	QUESTIONABLE_INVESTMENT = create("questionable_investment", b -> b.icon(Coin.TERACOIN.asStack())
 		.title("Questionable Investment")
 		.description("Buy coins for more than they are worth")
 		.after(MONEY_LAUNDERING)

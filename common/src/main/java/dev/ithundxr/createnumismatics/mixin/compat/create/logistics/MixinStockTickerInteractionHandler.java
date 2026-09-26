@@ -87,7 +87,7 @@ public class MixinStockTickerInteractionHandler {
         }
 
         MergingCoinBag available = new MergingCoinBag();
-        available.add(Coin.SPUR, deductable.getMaxWithdrawal());
+        available.add(Coin.TERACOIN, deductable.getMaxWithdrawal());
 
         DiscreteCoinBag taken = new DiscreteCoinBag();
 
