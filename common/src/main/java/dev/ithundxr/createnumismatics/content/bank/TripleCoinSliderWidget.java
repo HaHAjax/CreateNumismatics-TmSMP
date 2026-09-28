@@ -48,9 +48,9 @@ import static net.minecraft.client.gui.screens.Screen.hasShiftDown;
 public class TripleCoinSliderWidget extends AbstractSimiWidget {
 
     private static final Coin[] ROWS = new Coin[] {
-        Coin.TERACOIN,
-        Coin.COG,
-        Coin.SUN
+        Coin.ELECTRON,
+        Coin.EMBER,
+        Coin.WISP
     };
     private static final int milestoneSize = 4;
 
@@ -91,19 +91,19 @@ public class TripleCoinSliderWidget extends AbstractSimiWidget {
     }
 
     @Contract("_ -> this")
-    protected TripleCoinSliderWidget withValue(int spur) {
-        Couple<Integer> sunAndExtra = Coin.SUN.convert(spur, 64);
-        Couple<Integer> cogAndExtra = Coin.COG.convert(sunAndExtra.getSecond(), 64);
+    protected TripleCoinSliderWidget withValue(int electron) {
+        Couple<Integer> sunAndExtra = Coin.WISP.convert(electron, 64);
+        Couple<Integer> cogAndExtra = Coin.EMBER.convert(sunAndExtra.getSecond(), 64);
         return withValues(
-            cogAndExtra.getSecond(), // Spurs
+            cogAndExtra.getSecond(), // Electrons
             cogAndExtra.getFirst(),  // Cogs
             sunAndExtra.getFirst()   // Suns
         );
     }
 
     @Contract("_, _, _ -> this")
-    protected TripleCoinSliderWidget withValues(int spur, int cog, int sun) {
-        values[0] = spur;
+    protected TripleCoinSliderWidget withValues(int electron, int cog, int sun) {
+        values[0] = electron;
         values[1] = cog;
         values[2] = sun;
         return this;
@@ -322,6 +322,6 @@ public class TripleCoinSliderWidget extends AbstractSimiWidget {
 
     @FunctionalInterface
     public interface EditHandler {
-        void apply(int spurs, int cogs, int suns);
+        void apply(int electrons, int cogs, int suns);
     }
 }

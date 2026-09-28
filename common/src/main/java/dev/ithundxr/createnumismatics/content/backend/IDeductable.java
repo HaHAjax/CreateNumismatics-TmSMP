@@ -37,7 +37,7 @@ import java.util.UUID;
 
 public interface IDeductable {
     boolean deduct(Coin coin, int amount, ReasonHolder reasonHolder);
-    boolean deduct(int spurs, ReasonHolder reasonHolder);
+    boolean deduct(int electrons, ReasonHolder reasonHolder);
     int getMaxWithdrawal();
 
     @Nullable
@@ -162,7 +162,7 @@ public interface IDeductable {
         }
 
         @Override
-        public boolean deduct(int spurs, ReasonHolder reasonHolder) {
+        public boolean deduct(int electrons, ReasonHolder reasonHolder) {
             return false;
         }
 

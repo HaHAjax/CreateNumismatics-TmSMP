@@ -2,7 +2,7 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/teracoin.png",
+      "file": "numismatics:item/coin/electron.png",
       "ascent": 8,
       "height": 10,
       "chars": [
@@ -11,7 +11,7 @@
     },
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/bevel.png",
+      "file": "numismatics:item/coin/ion.png",
       "ascent": 8,
       "height": 10,
       "chars": [

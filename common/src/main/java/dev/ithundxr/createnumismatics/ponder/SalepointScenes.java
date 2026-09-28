@@ -262,7 +262,7 @@ public class SalepointScenes {
             .whileSneaking();
         scene.idle(15);
 
-        // price should become 4 ingots for 3 spurs
+        // price should become 4 ingots for 3 electrons
         var menuC = scenex.showContainerMenu(
                 5,
                 salepointPos,
@@ -331,7 +331,7 @@ public class SalepointScenes {
 
         for (int i = 1; i <= 3; i++) {
             final int finalI = i;
-            scenex.modifyScreen(menuC, $ -> $.screen().getVirtualHandle().setPrice(Coin.TERACOIN, finalI));
+            scenex.modifyScreen(menuC, $ -> $.screen().getVirtualHandle().setPrice(Coin.ELECTRON, finalI));
             scene.idle(5);
         }
 

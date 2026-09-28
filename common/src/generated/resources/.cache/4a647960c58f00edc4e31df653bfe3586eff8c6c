@@ -15,7 +15,7 @@ faf9ae18bb0b070f6e7ea2df4d88edb5ef44fdca assets/numismatics/lang/en_ud.json
 2449b7346e1657ef1c6ab4c134aab55b216ec783 assets/numismatics/models/item/andesite_depositor.json
 228b67a48aa045bfe809c54c756df80eb0765aad assets/numismatics/models/item/bank_terminal.json
 83ce6c9d27970b4c643f0f9f3dfeb58668fca3d4 assets/numismatics/models/item/banking_guide.json
-52b48750de8a5a571a08bce3f2f025474153d50b assets/numismatics/models/item/bevel.json
+52b48750de8a5a571a08bce3f2f025474153d50b assets/numismatics/models/item/ion.json
 dada04ceb5107ca4b311d8085ca699deda3c60de assets/numismatics/models/item/black_authorized_card.json
 84ab8c91452f94501b3acc31ec1e0bc64417f839 assets/numismatics/models/item/black_card.json
 70c481f36a9718ac48632e6939ac6ba785be4c9e assets/numismatics/models/item/black_id_card.json
@@ -65,7 +65,7 @@ b60a4818cad76e2fecad9750f7d576cf5528b5a8 assets/numismatics/models/item/red_auth
 0d06a3a44565e63cf98c451e7a4a6c28681d49be assets/numismatics/models/item/red_id_card.json
 5a9acd5e1dddb653eb91c82108679cb013dab46f assets/numismatics/models/item/salepoint.json
 95b492bd9230dc90fca9395c823cef39e644d8f2 assets/numismatics/models/item/sprocket.json
-facbd710d107ebc9b2c6ddfa3b59a16d5f85c992 assets/numismatics/models/item/spur.json
+facbd710d107ebc9b2c6ddfa3b59a16d5f85c992 assets/numismatics/models/item/electron.json
 8fd12493390894fa5b3988f499f758c17137af16 assets/numismatics/models/item/sun.json
 6965cf99471bb8c63f5f8a94577e2cddc3b2bc33 assets/numismatics/models/item/vendor.json
 0e4add47ede4986c6535d74c058d424a4960b36e assets/numismatics/models/item/white_authorized_card.json

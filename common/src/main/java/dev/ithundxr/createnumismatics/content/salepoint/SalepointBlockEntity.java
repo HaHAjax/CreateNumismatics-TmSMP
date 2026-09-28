@@ -570,11 +570,11 @@ public class SalepointBlockEntity extends SmartBlockEntity implements Trusted, T
         }
 
         Coin referenceCoin = NumismaticsConfig.common().referenceCoin.get();
-        Couple<Integer> referenceAndSpurs = referenceCoin.convert(getTotalPrice());
-        int reference = referenceAndSpurs.getFirst();
-        int spurs = referenceAndSpurs.getSecond();
+        Couple<Integer> referenceAndElectrons = referenceCoin.convert(getTotalPrice());
+        int reference = referenceAndElectrons.getFirst();
+        int electrons = referenceAndElectrons.getSecond();
         MutableComponent balanceLabel = Component.translatable("gui.numismatics.salepoint.price",
-            TextUtils.formatInt(reference), referenceCoin.getName(reference), spurs);
+            TextUtils.formatInt(reference), referenceCoin.getName(reference), electrons);
 
         state.createTooltip(clientsideTooltip, getLevel(), getTargetedPos(), ctx);
 

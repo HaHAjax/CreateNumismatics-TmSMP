@@ -227,7 +227,7 @@ public class BankAccount implements MenuProvider, IDeductable, IAuthorizationChe
     }
 
     public void deposit(Coin coin, int count) {
-        deposit(coin.toSpurs(count));
+        deposit(coin.toElectrons(count));
     }
 
     public void deposit(int amount) {
@@ -265,7 +265,7 @@ public class BankAccount implements MenuProvider, IDeductable, IAuthorizationChe
     }
 
     public boolean deduct(Coin coin, int amount, boolean force) {
-        return deduct(coin.toSpurs(amount), force);
+        return deduct(coin.toElectrons(amount), force);
     }
 
     public boolean deduct(int amount, boolean force) {

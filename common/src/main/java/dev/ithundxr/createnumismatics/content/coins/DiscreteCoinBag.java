@@ -50,7 +50,7 @@ public class DiscreteCoinBag implements CoinBag {
     private void calculateValue() {
         this.value = 0;
         for (Map.Entry<Coin, Integer> entry : coins.entrySet()) {
-            this.value += entry.getKey().toSpurs(entry.getValue());
+            this.value += entry.getKey().toElectrons(entry.getValue());
         }
     }
 
@@ -67,9 +67,9 @@ public class DiscreteCoinBag implements CoinBag {
     }
 
     @Override
-    public void set(Coin coin, int count, int spurRemainder) {
-        if (spurRemainder != 0) {
-            Numismatics.LOGGER.warn("DiscreteCoinBag.set() called with spurRemainder != 0");
+    public void set(Coin coin, int count, int electronRemainder) {
+        if (electronRemainder != 0) {
+            Numismatics.LOGGER.warn("DiscreteCoinBag.set() called with electronRemainder != 0");
         }
         count = Math.max(0, count);
         this.coins.put(coin, count);

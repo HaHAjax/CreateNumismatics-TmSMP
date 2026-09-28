@@ -27,7 +27,7 @@ public class CCommon extends ConfigBase {
 
     public final ConfigGroup coins = group(0, "coins", Comments.coins);
 
-    public final ConfigEnum<Coin> referenceCoin = e(Coin.COG, "defaultCoin", Comments.referenceCoin);
+    public final ConfigEnum<Coin> referenceCoin = e(Coin.EMBER, "defaultCoin", Comments.referenceCoin);
     
     // Based off of https://github.com/Layers-of-Railways/Railway/blob/68713f0fbb20080b7e207c070b1595bdbbc1bc00/common/src/main/java/com/railwayteam/railways/config/CCommon.java
     

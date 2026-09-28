@@ -96,11 +96,11 @@ public class BankScreen extends AbstractSimiContainerScreen<BankMenu> {
         graphics.drawCenteredString(font, title, x + (background.width - 8) / 2, y + 3, 0xFFFFFF);
 
 
-        Couple<Integer> referenceAndSpurs = NumismaticsConfig.common().referenceCoin.get().convert(menu.contentHolder.getBalance());
-        int cogs = referenceAndSpurs.getFirst();
-        int spurs = referenceAndSpurs.getSecond();
+        Couple<Integer> referenceAndElectrons = NumismaticsConfig.common().referenceCoin.get().convert(menu.contentHolder.getBalance());
+        int cogs = referenceAndElectrons.getFirst();
+        int electrons = referenceAndElectrons.getSecond();
         Component balanceLabel = Component.translatable("gui.numismatics.bank_terminal.balance",
-            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), spurs);
+            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), electrons);
         graphics.drawCenteredString(font, balanceLabel, x + (background.width - 8) / 2, y + 21, 0xFFFFFF);
     }
 

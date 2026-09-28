@@ -104,13 +104,13 @@ public class BankAccountBehaviour extends BlockEntityBehaviour {
             if (oldAccount.getBalance() != 0) {
                 // Drop coins
                 NonNullList<ItemStack> stacks = NonNullList.create();
-                int spurs = oldAccount.getBalance();
+                int electrons = oldAccount.getBalance();
                 for (Coin coin : Coin.valuesHighToLow()) {
-                    if (spurs == 0)
+                    if (electrons == 0)
                         break;
 
-                    Couple<Integer> amount = coin.convert(spurs);
-                    spurs = amount.getSecond();
+                    Couple<Integer> amount = coin.convert(electrons);
+                    electrons = amount.getSecond();
 
                     int coinAmount = amount.getFirst();
 

@@ -131,7 +131,7 @@ public class CoinItem extends Item {
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag isAdvanced) {
         super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
         Coin descriptor = coin.getDescription();
-        if (descriptor == Coin.TERACOIN) {
+        if (descriptor == Coin.ELECTRON) {
             tooltipComponents.add(Component.translatable("item.numismatics.coin.tooltip.value.basic", coin.value));
         } else {
             int relativeValue = coin.value / descriptor.value;

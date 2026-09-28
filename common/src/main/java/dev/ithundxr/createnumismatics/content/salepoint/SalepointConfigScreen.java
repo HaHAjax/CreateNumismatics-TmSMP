@@ -202,11 +202,11 @@ public class SalepointConfigScreen extends AbstractSimiContainerScreen<Salepoint
 
         graphics.drawCenteredString(font, title, x + (background.width - 8) / 2, y + 3, 0xFFFFFF);
 
-        Couple<Integer> referenceAndSpurs = NumismaticsConfig.common().referenceCoin.get().convert(menu.contentHolder.getTotalPrice());
-        int reference = referenceAndSpurs.getFirst();
-        int spurs = referenceAndSpurs.getSecond();
+        Couple<Integer> referenceAndElectrons = NumismaticsConfig.common().referenceCoin.get().convert(menu.contentHolder.getTotalPrice());
+        int reference = referenceAndElectrons.getFirst();
+        int electrons = referenceAndElectrons.getSecond();
         Component balanceLabel = Component.translatable("gui.numismatics.salepoint.price",
-            TextUtils.formatInt(reference), NumismaticsConfig.common().referenceCoin.get().getName(reference), spurs);
+            TextUtils.formatInt(reference), NumismaticsConfig.common().referenceCoin.get().getName(reference), electrons);
         graphics.drawCenteredString(font, balanceLabel, x + (background.width - 8) / 2, y + 21, 0xFFFFFF);
 
         ISalepointState<?> salepointState = getSalepointState();

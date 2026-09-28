@@ -47,7 +47,7 @@ public final class SubAccount implements IAuthorizationChecker {
     private String label;
 
     @NotNull
-    // In spurs, no limit if null
+    // In electrons, no limit if null
     private Limit totalLimit;
 
     // This trust list is special, because the parent account owner is NOT automatically a member.
@@ -111,31 +111,31 @@ public final class SubAccount implements IAuthorizationChecker {
     }
 
     public boolean spend(Authorization authorization, Coin coin, int count, boolean simulate, ReasonHolder reasonHolder) {
-        return spend(authorization, coin.toSpurs(count), simulate, reasonHolder);
+        return spend(authorization, coin.toElectrons(count), simulate, reasonHolder);
     }
 
-    public boolean spend(Authorization authorization, int spurs, ReasonHolder reasonHolder) {
-        return spend(authorization, spurs, false, reasonHolder);
+    public boolean spend(Authorization authorization, int electrons, ReasonHolder reasonHolder) {
+        return spend(authorization, electrons, false, reasonHolder);
     }
 
-    public boolean spend(Authorization authorization, int spurs, boolean simulate, ReasonHolder reasonHolder) {
+    public boolean spend(Authorization authorization, int electrons, boolean simulate, ReasonHolder reasonHolder) {
         if (!isAuthorized(authorization)) {
             reasonHolder.setMessage(Component.translatable("error.numismatics.card.not_authorized"));
             return false;
         }
 
-        if (parentAccount.getBalance() < spurs) {
+        if (parentAccount.getBalance() < electrons) {
             return false;
         }
 
-        if (!totalLimit.spend(spurs, simulate)) {
+        if (!totalLimit.spend(electrons, simulate)) {
             reasonHolder.setMessage(Component.translatable("error.numismatics.authorized_card.limit_reached"));
             return false;
         }
 
         if (!simulate) {
             markDirty();
-            parentAccount.deduct(spurs, reasonHolder);
+            parentAccount.deduct(electrons, reasonHolder);
         }
 
         return true;
@@ -274,8 +274,8 @@ public final class SubAccount implements IAuthorizationChecker {
         }
 
         @Override
-        public boolean deduct(int spurs, ReasonHolder reasonHolder) {
-            return spend(authorization, spurs, reasonHolder);
+        public boolean deduct(int electrons, ReasonHolder reasonHolder) {
+            return spend(authorization, electrons, reasonHolder);
         }
 
         @Override

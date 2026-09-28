@@ -44,13 +44,13 @@ class AuthorizationCheckingDeductableImpl implements IAuthorizationCheckingDeduc
     }
 
     @Override
-    public boolean deduct(int spurs, ReasonHolder reasonHolder) {
+    public boolean deduct(int electrons, ReasonHolder reasonHolder) {
         if (!authorizationChecker.isAuthorized(authorization)) {
             reasonHolder.setMessage(Component.translatable("error.numismatics.card.not_authorized"));
             return false;
         }
 
-        return wrapped.deduct(spurs, reasonHolder);
+        return wrapped.deduct(electrons, reasonHolder);
     }
 
     @Override

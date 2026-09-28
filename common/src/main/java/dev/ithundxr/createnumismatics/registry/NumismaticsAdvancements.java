@@ -54,7 +54,7 @@ public class NumismaticsAdvancements implements DataProvider {
 	 * (Advancement ordering seems to be deterministic but hash based)
 	 */
 
-	ROOT = create("root", b -> b.icon(Coin.CROWN.asStack())
+	ROOT = create("root", b -> b.icon(Coin.FLAME.asStack())
 		.title("Welcome to Numismatics")
 		.description("Here Be Riches")
 		.awardedForFree()
@@ -69,14 +69,14 @@ public class NumismaticsAdvancements implements DataProvider {
 		.special(SECRET)
 	),
 
-	QUESTIONABLE_INVESTMENT = create("questionable_investment", b -> b.icon(Coin.TERACOIN.asStack())
+	QUESTIONABLE_INVESTMENT = create("questionable_investment", b -> b.icon(Coin.ELECTRON.asStack())
 		.title("Questionable Investment")
 		.description("Buy coins for more than they are worth")
 		.after(MONEY_LAUNDERING)
 		.special(SECRET)
 	),
 
-	IS_THIS_LEGAL = create("is_this_legal", b -> b.icon(Coin.SUN.asStack())
+	IS_THIS_LEGAL = create("is_this_legal", b -> b.icon(Coin.WISP.asStack())
 		.title("Is This Legal?")
 		.description("Buy coins for less than they are worth")
 		.after(MONEY_LAUNDERING)

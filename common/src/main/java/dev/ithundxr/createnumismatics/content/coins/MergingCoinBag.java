@@ -38,20 +38,20 @@ public class MergingCoinBag implements CoinBag {
 
     @Override
     public void add(Coin coin, int count) {
-        setRaw(getValue() + coin.toSpurs(count));
+        setRaw(getValue() + coin.toElectrons(count));
     }
 
     @Override
     public void subtract(Coin coin, int count) {
-        int value = this.getValue() - coin.toSpurs(count);
+        int value = this.getValue() - coin.toElectrons(count);
         value = Math.max(0, value);
         setRaw(value);
     }
 
     @Override
-    public void set(Coin coin, int count, int spurRemainder) {
+    public void set(Coin coin, int count, int electronRemainder) {
         count = Math.max(0, count);
-        setRaw(coin.toSpurs(count) + spurRemainder);
+        setRaw(coin.toElectrons(count) + electronRemainder);
     }
 
     protected void setRaw(int value) {

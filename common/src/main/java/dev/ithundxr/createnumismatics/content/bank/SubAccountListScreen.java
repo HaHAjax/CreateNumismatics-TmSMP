@@ -73,7 +73,7 @@ public class SubAccountListScreen extends AbstractSimiContainerScreen<SubAccount
     private static final int CARD_BODY = 66;
     private static final int CARD_WIDTH = 208;
     private static final int CARD_SPACING = 2;
-    private static final int UNLIMITED_VALUE = Coin.SUN.toSpurs(64) + Coin.COG.toSpurs(64) + 64;
+    private static final int UNLIMITED_VALUE = Coin.WISP.toElectrons(64) + Coin.EMBER.toElectrons(64) + 64;
 
     private static final Color REMOVE_OFF_COLOR = new Color(0x606060, false).setImmutable();
     private static final Color REMOVE_ON_COLOR = new Color(0xff0029, false).setImmutable();
@@ -314,8 +314,8 @@ public class SubAccountListScreen extends AbstractSimiContainerScreen<SubAccount
             $ -> new TripleCoinSliderWidget(font, 2, CARD_HEADER + 18)
                 .setMaxIsInfinite(true)
                 .withValue(limit == null ? UNLIMITED_VALUE : limit)
-                .withEditCallback((int spurs, int cogs, int suns) -> {
-                    int total = Coin.SUN.toSpurs(suns) + Coin.COG.toSpurs(cogs) + spurs;
+                .withEditCallback((int electrons, int cogs, int suns) -> {
+                    int total = Coin.WISP.toElectrons(suns) + Coin.EMBER.toElectrons(cogs) + electrons;
                     if (total == UNLIMITED_VALUE) {
                         menu.setLimit(subAccount.getAuthorizationID(), null);
                     } else {

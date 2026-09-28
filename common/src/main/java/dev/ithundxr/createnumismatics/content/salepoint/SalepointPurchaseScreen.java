@@ -202,11 +202,11 @@ public class SalepointPurchaseScreen extends AbstractSimiContainerScreen<Salepoi
         graphics.drawCenteredString(font, title, x + (background.width - 8) / 2, y + 3, 0xFFFFFF);
 
         Coin referenceCoin = NumismaticsConfig.common().referenceCoin.get();
-        Couple<Integer> referenceAndSpurs = referenceCoin.convert(menu.contentHolder.getTotalPrice());
-        int reference = referenceAndSpurs.getFirst();
-        int spurs = referenceAndSpurs.getSecond();
+        Couple<Integer> referenceAndElectrons = referenceCoin.convert(menu.contentHolder.getTotalPrice());
+        int reference = referenceAndElectrons.getFirst();
+        int electrons = referenceAndElectrons.getSecond();
         Component balanceLabel = Component.translatable("gui.numismatics.salepoint.price",
-            TextUtils.formatInt(reference), referenceCoin.getName(reference), spurs);
+            TextUtils.formatInt(reference), referenceCoin.getName(reference), electrons);
         graphics.drawCenteredString(font, balanceLabel, x + (background.width - 8) / 2, y + 21, 0xFFFFFF);
 
         ISalepointState<?> salepointState = getSalepointState();
@@ -244,20 +244,20 @@ public class SalepointPurchaseScreen extends AbstractSimiContainerScreen<Salepoi
 
         int totalPrice = menu.contentHolder.getTotalPrice() * countScrollInput.getState();
         Coin referenceCoin = NumismaticsConfig.common().referenceCoin.get();
-        Couple<Integer> referenceAndSpurs = referenceCoin.convert(totalPrice);
-        int reference = referenceAndSpurs.getFirst();
-        int spurs = referenceAndSpurs.getSecond();
+        Couple<Integer> referenceAndElectrons = referenceCoin.convert(totalPrice);
+        int reference = referenceAndElectrons.getFirst();
+        int electrons = referenceAndElectrons.getSecond();
 
         referenceCoin.getIcon().render(graphics, x+133, y+45);
-        Coin.TERACOIN.getIcon().render(graphics, x+133, y+63);
+        Coin.ELECTRON.getIcon().render(graphics, x+133, y+63);
 
-        for (boolean spur : Iterate.falseAndTrue) {
-            FormattedCharSequence seq = Component.literal(TextUtils.formatInt(spur ? spurs : reference))
+        for (boolean electron : Iterate.falseAndTrue) {
+            FormattedCharSequence seq = Component.literal(TextUtils.formatInt(electron ? electrons : reference))
                 .getVisualOrderText();
 
             int width = font.width(seq);
             int textX = x + 133 - width;
-            graphics.drawString(font, seq, textX, y + (spur ? 63 : 45) + 4, 0x202020, false);
+            graphics.drawString(font, seq, textX, y + (electron ? 63 : 45) + 4, 0x202020, false);
         }
 
         ISalepointState<?> salepointState = getSalepointState();

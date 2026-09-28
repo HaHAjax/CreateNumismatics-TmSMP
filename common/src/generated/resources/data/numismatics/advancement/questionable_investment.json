@@ -14,7 +14,7 @@
     "hidden": true,
     "icon": {
       "count": 1,
-      "id": "numismatics:spur"
+      "id": "numismatics:electron"
     },
     "title": {
       "translate": "advancement.numismatics.questionable_investment"

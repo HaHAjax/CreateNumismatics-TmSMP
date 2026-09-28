@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 import static dev.ithundxr.createnumismatics.content.backend.Coin.getCoinFromName;
-import static dev.ithundxr.createnumismatics.content.backend.Coin.getCoinsFromSpurAmount;
+import static dev.ithundxr.createnumismatics.content.backend.Coin.getCoinsFromElectronAmount;
 
 public class VendorPeripheral extends SyncedPeripheral<VendorBlockEntity> {
     public VendorPeripheral(VendorBlockEntity blockEntity) {
@@ -44,8 +44,8 @@ public class VendorPeripheral extends SyncedPeripheral<VendorBlockEntity> {
     }
 
     @LuaFunction(mainThread = true)
-    public final void setTotalPrice(int spurAmount) {
-        List<Map.Entry<Coin, Integer>> coins = getCoinsFromSpurAmount(spurAmount);
+    public final void setTotalPrice(int electronAmount) {
+        List<Map.Entry<Coin, Integer>> coins = getCoinsFromElectronAmount(electronAmount);
         for (Map.Entry<Coin, Integer> coin : coins) {
             blockEntity.setPrice(coin.getKey(), coin.getValue());
         }

@@ -113,14 +113,14 @@ public class PayCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount) {
-        return execute(ctx, account, type, create, name, amount, Coin.TERACOIN);
+        return execute(ctx, account, type, create, name, amount, Coin.ELECTRON);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount, Coin coin) {
-        int spurValue = coin.toSpurs(amount);
-        if (pay(account, spurValue, create, type)) {
+        int electronValue = coin.toElectrons(amount);
+        if (pay(account, electronValue, create, type)) {
             ctx.getSource().sendSuccess(() -> Component.literal("Paid "+amount+" "+coin.getName(amount)+" to "+name+"."), true);
-            return spurValue;
+            return electronValue;
         } else {
             ctx.getSource().sendFailure(Component.literal("Could not find account for "+name+"."));
             return 0;

@@ -28,8 +28,8 @@ public class CServer extends ConfigBase {
 
     public final ConfigGroup starterCurrency = group(1, "starterCurrency", Comments.starterCurrency);
     
-    public final ConfigInt starterSpurs = i(0, 0, "starter_spurs");
-    public final ConfigInt starterBevels = i(0, 0, "starter_bevels");
+    public final ConfigInt starterElectrons = i(0, 0, "starter_electrons");
+    public final ConfigInt starterIons = i(0, 0, "starter_ions");
     public final ConfigInt starterSprockets = i(0, 0, "starter_sprockets");
     public final ConfigInt starterCogs = i(0, 0, "starter_cogs");
     public final ConfigInt starterCrowns = i(0, 0, "starter_crowns");

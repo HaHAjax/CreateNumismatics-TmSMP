@@ -120,15 +120,15 @@ public class DeductCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount, boolean force) {
-        return execute(ctx, account, type, create, name, amount, force, Coin.TERACOIN);
+        return execute(ctx, account, type, create, name, amount, force, Coin.ELECTRON);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, UUID account, Type type, boolean create, String name, int amount, boolean force, Coin coin) {
-        int spurValue = coin.toSpurs(amount);
-        int result = deduct(account, spurValue, force, create, type);
+        int electronValue = coin.toElectrons(amount);
+        int result = deduct(account, electronValue, force, create, type);
         if (result == 1) {
             ctx.getSource().sendSuccess(() -> Component.literal("Deducted "+amount+" "+coin.getName(amount)+" to "+name+"."), true);
-            return spurValue;
+            return electronValue;
         } else {
             if (result == -1) {
                 ctx.getSource().sendFailure(Component.literal("Could not find account for "+name+"."));

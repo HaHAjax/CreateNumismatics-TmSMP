@@ -134,18 +134,18 @@ public class Limit {
             return Component.translatable("gui.numismatics.limit.none");
         } else {
             if (monetary) {
-                Couple<Integer> cogsAndSpursSpent = Coin.COG.convert(spent);
-                int cogsSpent = cogsAndSpursSpent.getFirst();
-                int spursSpent = cogsAndSpursSpent.getSecond();
+                Couple<Integer> cogsAndElectronsSpent = Coin.EMBER.convert(spent);
+                int cogsSpent = cogsAndElectronsSpent.getFirst();
+                int electronsSpent = cogsAndElectronsSpent.getSecond();
 
-                Couple<Integer> cogsAndSpursLimit = Coin.COG.convert(limit);
-                int cogsLimit = cogsAndSpursLimit.getFirst();
-                int spursLimit = cogsAndSpursLimit.getSecond();
+                Couple<Integer> cogsAndElectronsLimit = Coin.EMBER.convert(limit);
+                int cogsLimit = cogsAndElectronsLimit.getFirst();
+                int electronsLimit = cogsAndElectronsLimit.getSecond();
 
                 return Component.translatable(
                     "gui.numismatics.limit.monetary",
-                    TextUtils.formatInt(cogsSpent), Coin.COG.getName(cogsSpent), spursSpent,
-                    TextUtils.formatInt(cogsLimit), Coin.COG.getName(cogsLimit), spursLimit
+                    TextUtils.formatInt(cogsSpent), Coin.EMBER.getName(cogsSpent), electronsSpent,
+                    TextUtils.formatInt(cogsLimit), Coin.EMBER.getName(cogsLimit), electronsLimit
                 );
             } else {
                 return Component.translatable("gui.numismatics.limit", spent, limit);

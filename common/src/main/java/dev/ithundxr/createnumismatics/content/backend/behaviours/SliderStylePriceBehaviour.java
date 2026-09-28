@@ -74,7 +74,7 @@ public class SliderStylePriceBehaviour extends BlockEntityBehaviour {
     private void calculateTotalPrice() {
         totalPrice = 0;
         for (Map.Entry<Coin, Integer> entry : prices.entrySet()) {
-            totalPrice += entry.getKey().toSpurs(entry.getValue());
+            totalPrice += entry.getKey().toElectrons(entry.getValue());
         }
     }
 

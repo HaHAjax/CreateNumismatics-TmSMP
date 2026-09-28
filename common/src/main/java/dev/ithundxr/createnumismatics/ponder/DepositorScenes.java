@@ -67,7 +67,7 @@ public class DepositorScenes {
             .placeNearTarget();
         scene.idle(30);
 
-        depositorSuccess(depositor, redstoneLamp, Coin.TERACOIN, scene, util);
+        depositorSuccess(depositor, redstoneLamp, Coin.ELECTRON, scene, util);
     }
 
     public static void redstone(SceneBuilder scene, SceneBuildingUtil util) {
@@ -104,7 +104,7 @@ public class DepositorScenes {
         scene.idle(20);
 
         // failure
-        depositorFailure(depositor, Coin.TERACOIN, scene, util);
+        depositorFailure(depositor, Coin.ELECTRON, scene, util);
         scene.idle(10);
 
         // unlock
@@ -116,7 +116,7 @@ public class DepositorScenes {
         scene.idle(20);
 
         // success
-        depositorSuccess(depositor, redstoneLamp, Coin.COG, scene, util);
+        depositorSuccess(depositor, redstoneLamp, Coin.EMBER, scene, util);
     }
 
     // TODO: once gui ponders are implemented, perhaps show the Brass Depositor's gui when describing its pricing
@@ -146,7 +146,7 @@ public class DepositorScenes {
         int cascadeInterval = 7;
         InputWindowElement price = createElement(
             util.vector().topOf(depositor),
-            "amount_spaced_1x", Coin.TERACOIN.getIcon()
+            "amount_spaced_1x", Coin.ELECTRON.getIcon()
         );
         scene.addInstruction(new ShowInputInstruction(price, cascadeInterval * cascadeCount));
 
@@ -157,10 +157,10 @@ public class DepositorScenes {
         }
         scene.idle(10);
 
-        depositorFailure(depositor, Coin.BEVEL, scene, util);
+        depositorFailure(depositor, Coin.ION, scene, util);
         scene.idle(10);
 
-        depositorSuccess(depositor, redstoneLamp, Coin.TERACOIN, scene, util);
+        depositorSuccess(depositor, redstoneLamp, Coin.ELECTRON, scene, util);
         scene.idle(10);
 
         // convert to brass
@@ -193,8 +193,8 @@ public class DepositorScenes {
         };
         DoubleInputWindowElement combinedPrice = createElement(
             util.vector().topOf(depositor),
-            "amount_spaced_1x", Coin.SPROCKET.getIcon(),
-            "amount_spaced_1x", Coin.COG.getIcon()
+            "amount_spaced_1x", Coin.SPARK.getIcon(),
+            "amount_spaced_1x", Coin.EMBER.getIcon()
         );
         scene.addInstruction(new ShowInputInstruction(combinedPrice, cascadeInterval * values.length));
 

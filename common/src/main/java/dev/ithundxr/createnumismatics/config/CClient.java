@@ -39,7 +39,7 @@ public class CClient extends ConfigBase {
     private static class Comments {
         static final String client = "Client-only settings - If you're looking for general settings, look inside your worlds serverconfig folder!";
         static final String scalePonderGui = "Whether GUIs in Ponders should be scaled down";
-        static final String coinEmojiPrefix = "Depending on the mode, a bevel icon can be created using :bevel:, :coin-bevel:, or :numi-bevel: respectively.";
+        static final String coinEmojiPrefix = "Depending on the mode, an ion icon can be created using :ion:, :coin-ion:, or :numi-ion: respectively.";
     }
 
     public enum EmojiMode {

@@ -49,11 +49,11 @@ public class PayAllCommand {
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, int amount) {
-        return execute(ctx, amount, Coin.TERACOIN);
+        return execute(ctx, amount, Coin.ELECTRON);
     }
 
     private static int execute(CommandContext<CommandSourceStack> ctx, int amount, Coin coin) {
-        int spurValue = coin.toSpurs(amount);
+        int electronValue = coin.toElectrons(amount);
         int sum = 0;
 
         Set<UUID> uuids = Numismatics.BANK.accounts.keySet();
@@ -62,7 +62,7 @@ public class PayAllCommand {
             BankAccount account = Numismatics.BANK.getAccount(uuid);
 
             if (account != null && account.type == Type.PLAYER) {
-                account.deposit(spurValue);
+                account.deposit(electronValue);
 
                 sum ++;
             }

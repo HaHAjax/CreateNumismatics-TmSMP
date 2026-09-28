@@ -28,10 +28,10 @@ public interface CoinBag {
 
     void subtract(Coin coin, int count);
 
-    void set(Coin coin, int count, int spurRemainder);
+    void set(Coin coin, int count, int electronRemainder);
 
     /**
-     * @return Couple of (amount of this coin, remainder of spurs)
+     * @return Couple of (amount of this coin, remainder of electrons)
      */
     Couple<Integer> get(Coin coin);
 

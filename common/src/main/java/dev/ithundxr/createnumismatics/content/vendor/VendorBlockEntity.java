@@ -432,11 +432,11 @@ public class VendorBlockEntity extends SmartBlockEntity implements Trusted, Trus
             }
         }
 
-        Couple<Integer> referenceAndSpurs = NumismaticsConfig.common().referenceCoin.get().convert(getTotalPrice());
-        int cogs = referenceAndSpurs.getFirst();
-        int spurs = referenceAndSpurs.getSecond();
+        Couple<Integer> referenceAndElectrons = NumismaticsConfig.common().referenceCoin.get().convert(getTotalPrice());
+        int cogs = referenceAndElectrons.getFirst();
+        int electrons = referenceAndElectrons.getSecond();
         MutableComponent balanceLabel = Component.translatable("block.numismatics.vendor.tooltip.price",
-            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), spurs);
+            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), electrons);
 
         // Selling/Buying
         Lang.builder(Numismatics.MOD_ID)
@@ -949,7 +949,7 @@ public class VendorBlockEntity extends SmartBlockEntity implements Trusted, Trus
         if (selling.getItem() instanceof CoinItem coin) {
             NumismaticsAdvancements.MONEY_LAUNDERING.awardTo(player);
 
-            int soldValue = coin.coin.toSpurs(selling.getCount());
+            int soldValue = coin.coin.toElectrons(selling.getCount());
             int paidValue = price.getTotalPrice();
 
             if (soldValue > paidValue) {

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "numismatics:item/coin/bevel"
+    "layer0": "numismatics:item/coin/electron"
   }
 }

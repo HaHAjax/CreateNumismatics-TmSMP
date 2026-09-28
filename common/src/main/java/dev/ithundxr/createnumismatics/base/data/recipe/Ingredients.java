@@ -119,7 +119,7 @@ public class Ingredients {
 	}
 
 	public static ItemLike cogCoin() {
-		return NumismaticsItems.getCoin(Coin.COG);
+		return NumismaticsItems.getCoin(Coin.EMBER);
 	}
 
 	public static ItemLike paper() {

@@ -39,25 +39,25 @@ import java.util.function.BiConsumer;
 import static dev.ithundxr.createnumismatics.registry.NumismaticsIcons.*;
 
 /*
-64 spurs to a cog
-8 bevels to a cog
+64 electrons to a cog
+8 ions to a cog
 4 sprockets to a cog
 8 cogs to a crown
 8 crowns to a sun
  */
 
 public enum Coin implements INamedIconOptions {
-    TERACOIN(1, Rarity.COMMON, I_COIN_TERACOIN, I_COIN_TERACOIN_RED_LINE, "\uF011"),
-    BEVEL(8, Rarity.COMMON, I_COIN_BEVEL, I_COIN_BEVEL_RED_LINE, "\uF012"), // 8 spurs
-    SPROCKET(16, Rarity.COMMON, I_COIN_SPROCKET, I_COIN_SPROCKET_RED_LINE, "\uF013"), // 16 spurs, 2 bevels
-    COG(64, Rarity.UNCOMMON, I_COIN_COG, I_COIN_COG_RED_LINE, "\uF014"), // 64 spurs, 8 bevels, 4 sprockets
-    CROWN(512, Rarity.RARE, I_COIN_CROWN, I_COIN_CROWN_RED_LINE, "\uF015"), // 512 spurs, 64 bevels, 32 sprockets, 8 cogs
-    SUN(4096, Rarity.EPIC, I_COIN_SUN, I_COIN_SUN_RED_LINE, "\uF016") // 4096 spurs, 512 bevels, 256 sprockets, 64 cogs, 8 crowns
+    ELECTRON(1, Rarity.COMMON, I_COIN_ELECTRON, I_COIN_ELECTRON_RED_LINE, "\uF011"),
+    ION(10, Rarity.COMMON, I_COIN_ION, I_COIN_ION_RED_LINE, "\uF012"), // 8 electrons
+    SPARK(100, Rarity.COMMON, I_COIN_SPROCKET, I_COIN_SPROCKET_RED_LINE, "\uF013"), // 16 electrons, 2 ions
+    EMBER(1000, Rarity.UNCOMMON, I_COIN_COG, I_COIN_COG_RED_LINE, "\uF014"), // 64 electrons, 8 ions, 4 sprockets
+    FLAME(10000, Rarity.RARE, I_COIN_CROWN, I_COIN_CROWN_RED_LINE, "\uF015"), // 512 electrons, 64 ions, 32 sprockets, 8 cogs
+    WISP(100000, Rarity.EPIC, I_COIN_SUN, I_COIN_SUN_RED_LINE, "\uF016") // 4096 electrons, 512 ions, 256 sprockets, 64 cogs, 8 crowns
     ;
     
     public static final StreamCodec<ByteBuf, Coin> STREAM_CODEC = CatnipStreamCodecBuilders.ofEnum(Coin.class);
 
-    public final int value; // in terms of spurs
+    public final int value; // in terms of electrons
     public final Rarity rarity;
     private final NumismaticsIcons icon;
     private final NumismaticsIcons redLineIcon;
@@ -83,34 +83,34 @@ public enum Coin implements INamedIconOptions {
     }
 
     /**
-     * Convert this coin to spurs
+     * Convert this coin to electrons
      * @param amount Number of this coin
-     * @return Number of spurs
+     * @return Number of electrons
      */
-    public int toSpurs(int amount) {
+    public int toElectrons(int amount) {
         return amount * value;
     }
 
     /**
-     * Convert spurs to this coin
-     * @param amount Number of spurs
-     * @return Couple of (amount of this coin, remainder of spurs)
+     * Convert electrons to this coin
+     * @param amount Number of electrons
+     * @return Couple of (amount of this coin, remainder of electrons)
      */
     public Couple<Integer> convert(int amount) {
-        if (this == TERACOIN) return Couple.create(amount, 0);
+        if (this == ELECTRON) return Couple.create(amount, 0);
         int remainder = amount % value;
         int converted = (amount - remainder) / value;
         return Couple.create(converted, remainder);
     }
 
     /**
-     * Convert spurs to this coin
-     * @param amount Number of spurs
+     * Convert electrons to this coin
+     * @param amount Number of electrons
      * @param max Maximum number of this coin
-     * @return Couple of (amount of this coin, remainder of spurs)
+     * @return Couple of (amount of this coin, remainder of electrons)
      */
     public Couple<Integer> convert(int amount, int max) {
-        if (this == TERACOIN) return Couple.create(amount, 0);
+        if (this == ELECTRON) return Couple.create(amount, 0);
         int remainder = amount % value;
         int converted = (amount - remainder) / value;
         if (converted > max) {
@@ -155,7 +155,7 @@ public enum Coin implements INamedIconOptions {
     }
 
     public Coin getDescription() {
-        return this.value < NumismaticsConfig.common().referenceCoin.get().value ? TERACOIN : NumismaticsConfig.common().referenceCoin.get();
+        return this.value < NumismaticsConfig.common().referenceCoin.get().value ? ELECTRON : NumismaticsConfig.common().referenceCoin.get();
     }
 
     public ItemStack asStack() {
@@ -167,7 +167,7 @@ public enum Coin implements INamedIconOptions {
     }
 
     public static Coin closest(int value) {
-        Coin closest = Coin.TERACOIN;
+        Coin closest = Coin.ELECTRON;
 
         for (Coin coin : values()) {
             if (Math.abs(coin.value - value) <= Math.abs(closest.value - value))
@@ -176,12 +176,12 @@ public enum Coin implements INamedIconOptions {
         return closest;
     }
 
-    public static List<Map.Entry<Coin, Integer>> getCoinsFromSpurAmount(int spurAmount){
+    public static List<Map.Entry<Coin, Integer>> getCoinsFromElectronAmount(int electronAmount){
         List<Map.Entry<Coin, Integer>> coins = new ArrayList<>();
         for(Coin coin : Arrays.stream(Coin.values()).sorted(Comparator.comparingInt(c -> -c.value)).toList()){
-            Couple<Integer> coinAmount = coin.convert(spurAmount);
+            Couple<Integer> coinAmount = coin.convert(electronAmount);
             coins.add(new AbstractMap.SimpleEntry<>(coin, coinAmount.getFirst()));
-            spurAmount = coinAmount.getSecond();
+            electronAmount = coinAmount.getSecond();
         }
         return coins;
     }

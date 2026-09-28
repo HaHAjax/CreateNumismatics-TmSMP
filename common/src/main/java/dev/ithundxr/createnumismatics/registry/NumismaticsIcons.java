@@ -45,17 +45,17 @@ public class NumismaticsIcons extends AllIcons {
     private boolean isCoin = false;
 
     /*
-    TERACOIN(1, Rarity.COMMON),
-    BEVEL(8, Rarity.COMMON), // 8 spurs
-    SPROCKET(16, Rarity.COMMON), // 16 spurs, 2 bevels
-    COG(64, Rarity.UNCOMMON), // 64 spurs, 8 bevels, 4 sprockets
-    CROWN(512, Rarity.RARE), // 512 spurs, 64 bevels, 32 sprockets, 8 cogs
-    SUN(4096, Rarity.EPIC) // 4096 spurs, 512 bevels, 256 sprockets, 64 cogs, 8 crowns
+    ELECTRON(1, Rarity.COMMON),
+    ION(8, Rarity.COMMON), // 8 electrons
+    SPARK(16, Rarity.COMMON), // 16 electrons, 2 ions
+    EMBER(64, Rarity.UNCOMMON), // 64 electrons, 8 ions, 4 sprockets
+    FLAME(512, Rarity.RARE), // 512 electrons, 64 ions, 32 sprockets, 8 cogs
+    WISP(4096, Rarity.EPIC) // 4096 electrons, 512 ions, 256 sprockets, 64 cogs, 8 crowns
      */
 
     public static final NumismaticsIcons
-        I_COIN_TERACOIN = newRow(),
-        I_COIN_BEVEL = next(),
+        I_COIN_ELECTRON = newRow(),
+        I_COIN_ION = next(),
         I_COIN_SPROCKET = next(),
         I_COIN_COG = next(),
         I_COIN_CROWN = next(),
@@ -63,12 +63,12 @@ public class NumismaticsIcons extends AllIcons {
     ;
 
     public static final NumismaticsIcons
-       I_COIN_TERACOIN_RED_LINE = newRow(),
-       I_COIN_BEVEL_RED_LINE = next(),
-       I_COIN_SPROCKET_RED_LINE = next(),
-       I_COIN_COG_RED_LINE = next(),
-       I_COIN_CROWN_RED_LINE = next(),
-       I_COIN_SUN_RED_LINE = next()
+        I_COIN_ELECTRON_RED_LINE = newRow(),
+        I_COIN_ION_RED_LINE = next(),
+        I_COIN_SPROCKET_RED_LINE = next(),
+        I_COIN_COG_RED_LINE = next(),
+        I_COIN_CROWN_RED_LINE = next(),
+        I_COIN_SUN_RED_LINE = next()
     ;
     
     public static final NumismaticsIcons

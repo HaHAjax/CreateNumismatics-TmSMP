@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "numismatics:item/coin/teracoin"
+    "layer0": "numismatics:item/coin/ion"
   }
 }

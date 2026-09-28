@@ -82,7 +82,7 @@ public class VendorScenes {
         scene.idle(10);
 
         scene.overlay().showText(70)
-            .text("This vendor is selling 8 apples for a cog and a bevel.")
+            .text("This vendor is selling 8 apples for a cog and an ion.")
             .attachKeyFrame()
             .pointAt(vendorText)
             .placeNearTarget();
@@ -110,7 +110,7 @@ public class VendorScenes {
                 scene,
                 util,
                 vendorSell,
-                (bulk ? Coin.COG : Coin.BEVEL).asStack(9),
+                (bulk ? Coin.EMBER : Coin.ION).asStack(9),
                 new ItemStack(Items.GOLDEN_APPLE, bulk ? 64 : 8),
                 bulk
             );
@@ -125,7 +125,7 @@ public class VendorScenes {
         scene.idle(30);
 
         scene.overlay().showText(70)
-            .text("This vendor is buying 16 oak logs for a bevel.")
+            .text("This vendor is buying 16 oak logs for a ion.")
             .attachKeyFrame()
             .pointAt(vendorText)
             .placeNearTarget();
@@ -154,7 +154,7 @@ public class VendorScenes {
                 util,
                 vendorSell,
                 new ItemStack(Items.OAK_LOG, bulk ? 64 : 16),
-                Coin.BEVEL.asStack(bulk ? 4 : 1),
+                Coin.ION.asStack(bulk ? 4 : 1),
                 bulk
             );
         }
@@ -266,7 +266,7 @@ public class VendorScenes {
 
         for (int i = 1; i <= 8; i++) {
             final int finalI = i;
-            scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.BEVEL, finalI));
+            scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.ION, finalI));
             scene.idle(5);
         }
 
@@ -276,7 +276,7 @@ public class VendorScenes {
 
         for (int i = 8; i >= 1; i--) {
             final int finalI = i;
-            scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.BEVEL, finalI));
+            scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.ION, finalI));
             scene.idle(5);
         }
 
@@ -287,7 +287,7 @@ public class VendorScenes {
 
         scenex.modifyCursor(menu, c -> c.setCursor(Cursor.SCROLL_UP));
         scene.idle(5);
-        scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.COG, 1));
+        scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.EMBER, 1));
         scene.idle(5);
         scenex.modifyCursor(menu, c -> c.setCursor(Cursor.NORMAL));
         scene.idle(20);
@@ -347,7 +347,7 @@ public class VendorScenes {
                 VendorScreen::new
             )
             .inventoryFiller(inv -> {
-                inv.setItem(9, Coin.BEVEL.asStack(64));
+                inv.setItem(9, Coin.ION.asStack(64));
                 inv.setItem(10, new ItemStack(Items.OAK_LOG, 1));
             })
             .attachKeyFrame()
@@ -395,7 +395,7 @@ public class VendorScenes {
             $$.setDeltaMovement($$.getDeltaMovement().scale(1.5).add(0, 0.25, 0)))); // add some pizzazz to the cleared items
         scene.idle(5);
 
-        // swap logs for bevels
+        // swap logs for ions
         scenex.cursorTarget(ScreenVec.slotRelative(menu, 10, 10, VendorMenu.PLAYER_INV_START_INDEX + 9));
         scene.idle(10);
         scenex.clickSlot(menu, VendorMenu.PLAYER_INV_START_INDEX + 9);
@@ -405,7 +405,7 @@ public class VendorScenes {
             .placeNearTarget();
         scene.idle(5);
 
-        // place bevels in coin supply
+        // place ions in coin supply
         scenex.cursorTarget(ScreenVec.slotRelative(menu, 7, 7, 1));
         scene.idle(10);
         scenex.clickSlot(menu, 1);
@@ -417,7 +417,7 @@ public class VendorScenes {
 
         scenex.modifyCursor(menu, c -> c.setCursor(Cursor.SCROLL_DOWN));
         scene.idle(5);
-        scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.COG, 0));
+        scenex.modifyScreen(menu, $ -> $.screen().getVirtualHandle().setPrice(Coin.EMBER, 0));
         scene.idle(5);
         scenex.modifyCursor(menu, c -> c.setCursor(Cursor.NORMAL));
         scene.idle(15);
