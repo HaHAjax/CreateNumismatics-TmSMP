@@ -46,29 +46,29 @@ public class NumismaticsIcons extends AllIcons {
 
     /*
     ELECTRON(1, Rarity.COMMON),
-    ION(8, Rarity.COMMON), // 8 electrons
-    SPARK(16, Rarity.COMMON), // 16 electrons, 2 ions
-    EMBER(64, Rarity.UNCOMMON), // 64 electrons, 8 ions, 4 sprockets
-    FLAME(512, Rarity.RARE), // 512 electrons, 64 ions, 32 sprockets, 8 cogs
-    WISP(4096, Rarity.EPIC) // 4096 electrons, 512 ions, 256 sprockets, 64 cogs, 8 crowns
+    ION(10, Rarity.COMMON), // 10 electrons
+    SPARK(100, Rarity.COMMON), // 100 electrons, 10 ions
+    EMBER(1000, Rarity.UNCOMMON), // 1,000 electrons, 100 ions, 10 sparks
+    FLAME(10000, Rarity.RARE), // 10,000 electrons, 1,000 ions, 100 sparks, 10 embers
+    WISP(100000, Rarity.EPIC) // 100,000 electrons, 10,000 ions, 1,000 sparks, 100 embers, 10 flames
      */
 
     public static final NumismaticsIcons
         I_COIN_ELECTRON = newRow(),
         I_COIN_ION = next(),
-        I_COIN_SPROCKET = next(),
-        I_COIN_COG = next(),
-        I_COIN_CROWN = next(),
-        I_COIN_SUN = next()
+        I_COIN_SPARK = next(),
+        I_COIN_EMBER = next(),
+        I_COIN_FLAME = next(),
+        I_COIN_WISP = next()
     ;
 
     public static final NumismaticsIcons
         I_COIN_ELECTRON_RED_LINE = newRow(),
         I_COIN_ION_RED_LINE = next(),
-        I_COIN_SPROCKET_RED_LINE = next(),
-        I_COIN_COG_RED_LINE = next(),
-        I_COIN_CROWN_RED_LINE = next(),
-        I_COIN_SUN_RED_LINE = next()
+        I_COIN_SPARK_RED_LINE = next(),
+        I_COIN_EMBER_RED_LINE = next(),
+        I_COIN_FLAME_RED_LINE = next(),
+        I_COIN_WISP_RED_LINE = next()
     ;
     
     public static final NumismaticsIcons

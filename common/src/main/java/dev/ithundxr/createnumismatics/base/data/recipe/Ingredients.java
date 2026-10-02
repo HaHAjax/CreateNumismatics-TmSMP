@@ -118,7 +118,7 @@ public class Ingredients {
 		return AllItems.STURDY_SHEET.get();
 	}
 
-	public static ItemLike cogCoin() {
+	public static ItemLike emberCoin() {
 		return NumismaticsItems.getCoin(Coin.EMBER);
 	}
 

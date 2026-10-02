@@ -144,10 +144,10 @@ public class BrassDepositorBlockEntity extends AbstractDepositorBlockEntity impl
     @Override
     public boolean addToTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
         Couple<Integer> referenceAndElectrons = NumismaticsConfig.common().referenceCoin.get().convert(price.getTotalPrice());
-        int cogs = referenceAndElectrons.getFirst();
+        int embers = referenceAndElectrons.getFirst();
         int electrons = referenceAndElectrons.getSecond();
         MutableComponent balanceLabel = Component.translatable("block.numismatics.brass_depositor.tooltip.price",
-            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), electrons);
+            TextUtils.formatInt(embers), NumismaticsConfig.common().referenceCoin.get().getName(embers), electrons);
         Lang.builder(Numismatics.MOD_ID)
             .add(balanceLabel.withStyle(Coin.closest(price.getTotalPrice()).rarity.color()))
             .forGoggles(tooltip);

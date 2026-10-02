@@ -131,10 +131,10 @@ public class BrassDepositorScreen extends AbstractSimiContainerScreen<BrassDepos
         graphics.drawCenteredString(font, title, x + (background.width - 8) / 2, y + 3, 0xFFFFFF);
 
         Couple<Integer> referenceAndElectrons = NumismaticsConfig.common().referenceCoin.get().convert(menu.contentHolder.getTotalPrice());
-        int cogs = referenceAndElectrons.getFirst();
+        int embers = referenceAndElectrons.getFirst();
         int electrons = referenceAndElectrons.getSecond();
         Component balanceLabel = Component.translatable("block.numismatics.brass_depositor.tooltip.price",
-            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), electrons);
+            TextUtils.formatInt(embers), NumismaticsConfig.common().referenceCoin.get().getName(embers), electrons);
         graphics.drawCenteredString(font, balanceLabel, x + (background.width - 8) / 2, y + 21, 0xFFFFFF);
     }
 

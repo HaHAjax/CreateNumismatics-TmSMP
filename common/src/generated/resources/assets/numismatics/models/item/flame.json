@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "numismatics:item/coin/crown"
+    "layer0": "numismatics:item/coin/flame"
   }
 }

@@ -82,7 +82,7 @@ public class VendorScenes {
         scene.idle(10);
 
         scene.overlay().showText(70)
-            .text("This vendor is selling 8 apples for a cog and an ion.")
+            .text("This vendor is selling 8 apples for an ember and an ion.")
             .attachKeyFrame()
             .pointAt(vendorText)
             .placeNearTarget();
@@ -411,7 +411,7 @@ public class VendorScenes {
         scenex.clickSlot(menu, 1);
         scene.idle(10);
 
-        // set (cog) prices
+        // set (ember) prices
         scenex.cursorTarget(ScreenVec.relative(menu, 218, 58));
         scene.idle(20);
 

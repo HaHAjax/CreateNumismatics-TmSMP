@@ -39,20 +39,20 @@ import java.util.function.BiConsumer;
 import static dev.ithundxr.createnumismatics.registry.NumismaticsIcons.*;
 
 /*
-64 electrons to a cog
-8 ions to a cog
-4 sprockets to a cog
-8 cogs to a crown
-8 crowns to a sun
+10 electrons to an ion
+10 ions to a spark
+10 sparks to an ember
+10 embers to a flame
+10 flames to a wisp
  */
 
 public enum Coin implements INamedIconOptions {
     ELECTRON(1, Rarity.COMMON, I_COIN_ELECTRON, I_COIN_ELECTRON_RED_LINE, "\uF011"),
-    ION(10, Rarity.COMMON, I_COIN_ION, I_COIN_ION_RED_LINE, "\uF012"), // 8 electrons
-    SPARK(100, Rarity.COMMON, I_COIN_SPROCKET, I_COIN_SPROCKET_RED_LINE, "\uF013"), // 16 electrons, 2 ions
-    EMBER(1000, Rarity.UNCOMMON, I_COIN_COG, I_COIN_COG_RED_LINE, "\uF014"), // 64 electrons, 8 ions, 4 sprockets
-    FLAME(10000, Rarity.RARE, I_COIN_CROWN, I_COIN_CROWN_RED_LINE, "\uF015"), // 512 electrons, 64 ions, 32 sprockets, 8 cogs
-    WISP(100000, Rarity.EPIC, I_COIN_SUN, I_COIN_SUN_RED_LINE, "\uF016") // 4096 electrons, 512 ions, 256 sprockets, 64 cogs, 8 crowns
+    ION(10, Rarity.COMMON, I_COIN_ION, I_COIN_ION_RED_LINE, "\uF012"),
+    SPARK(100, Rarity.COMMON, I_COIN_SPARK, I_COIN_SPARK_RED_LINE, "\uF013"),
+    EMBER(1000, Rarity.UNCOMMON, I_COIN_EMBER, I_COIN_EMBER_RED_LINE, "\uF014"),
+    FLAME(10000, Rarity.RARE, I_COIN_FLAME, I_COIN_FLAME_RED_LINE, "\uF015"),
+    WISP(100000, Rarity.EPIC, I_COIN_WISP, I_COIN_WISP_RED_LINE, "\uF016")
     ;
     
     public static final StreamCodec<ByteBuf, Coin> STREAM_CODEC = CatnipStreamCodecBuilders.ofEnum(Coin.class);

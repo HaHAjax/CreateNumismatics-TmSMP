@@ -199,9 +199,9 @@ public class DepositorScenes {
         scene.addInstruction(new ShowInputInstruction(combinedPrice, cascadeInterval * values.length));
 
         for (int[] valuePair : values) {
-            int sprocketCount = valuePair[0];
-            int cogCount = valuePair[1];
-            changeAmount(scene, combinedPrice, sprocketCount, cogCount, cascadeInterval);
+            int sparkCount = valuePair[0];
+            int emberCount = valuePair[1];
+            changeAmount(scene, combinedPrice, sparkCount, emberCount, cascadeInterval);
         }
         scene.idle(10);
 

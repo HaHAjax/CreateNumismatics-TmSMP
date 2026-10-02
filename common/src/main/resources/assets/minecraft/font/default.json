@@ -20,7 +20,7 @@
     },
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/sprocket.png",
+      "file": "numismatics:item/coin/spark.png",
       "ascent": 8,
       "height": 10,
       "chars": [
@@ -29,7 +29,7 @@
     },
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/cog.png",
+      "file": "numismatics:item/coin/ember.png",
       "ascent": 8,
       "height": 10,
       "chars": [
@@ -38,7 +38,7 @@
     },
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/crown.png",
+      "file": "numismatics:item/coin/flame.png",
       "ascent": 8,
       "height": 10,
       "chars": [
@@ -47,7 +47,7 @@
     },
     {
       "type": "bitmap",
-      "file": "numismatics:item/coin/sun.png",
+      "file": "numismatics:item/coin/wisp.png",
       "ascent": 8,
       "height": 10,
       "chars": [

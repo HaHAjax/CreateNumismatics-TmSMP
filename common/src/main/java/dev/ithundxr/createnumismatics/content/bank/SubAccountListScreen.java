@@ -314,8 +314,8 @@ public class SubAccountListScreen extends AbstractSimiContainerScreen<SubAccount
             $ -> new TripleCoinSliderWidget(font, 2, CARD_HEADER + 18)
                 .setMaxIsInfinite(true)
                 .withValue(limit == null ? UNLIMITED_VALUE : limit)
-                .withEditCallback((int electrons, int cogs, int suns) -> {
-                    int total = Coin.WISP.toElectrons(suns) + Coin.EMBER.toElectrons(cogs) + electrons;
+                .withEditCallback((int electrons, int embers, int wisps) -> {
+                    int total = Coin.WISP.toElectrons(wisps) + Coin.EMBER.toElectrons(embers) + electrons;
                     if (total == UNLIMITED_VALUE) {
                         menu.setLimit(subAccount.getAuthorizationID(), null);
                     } else {

@@ -106,10 +106,10 @@ public class GlobalBankManager {
             if (type == Type.PLAYER) {
                 account.deposit(Coin.ELECTRON, NumismaticsConfig.server().starterElectrons.get());
                 account.deposit(Coin.ION, NumismaticsConfig.server().starterIons.get());
-                account.deposit(Coin.SPARK, NumismaticsConfig.server().starterSprockets.get());
-                account.deposit(Coin.EMBER, NumismaticsConfig.server().starterCogs.get());
-                account.deposit(Coin.FLAME, NumismaticsConfig.server().starterCrowns.get());
-                account.deposit(Coin.WISP, NumismaticsConfig.server().starterSuns.get());
+                account.deposit(Coin.SPARK, NumismaticsConfig.server().starterSparks.get());
+                account.deposit(Coin.EMBER, NumismaticsConfig.server().starterEmbers.get());
+                account.deposit(Coin.FLAME, NumismaticsConfig.server().starterFlames.get());
+                account.deposit(Coin.WISP, NumismaticsConfig.server().starterWisps.get());
             }
 
             accounts.put(uuid, account);

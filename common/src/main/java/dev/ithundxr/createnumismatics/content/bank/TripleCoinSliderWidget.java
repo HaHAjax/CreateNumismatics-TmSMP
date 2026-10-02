@@ -92,20 +92,20 @@ public class TripleCoinSliderWidget extends AbstractSimiWidget {
 
     @Contract("_ -> this")
     protected TripleCoinSliderWidget withValue(int electron) {
-        Couple<Integer> sunAndExtra = Coin.WISP.convert(electron, 64);
-        Couple<Integer> cogAndExtra = Coin.EMBER.convert(sunAndExtra.getSecond(), 64);
+        Couple<Integer> wispAndExtra = Coin.WISP.convert(electron, 64);
+        Couple<Integer> emberAndExtra = Coin.EMBER.convert(wispAndExtra.getSecond(), 64);
         return withValues(
-            cogAndExtra.getSecond(), // Electrons
-            cogAndExtra.getFirst(),  // Cogs
-            sunAndExtra.getFirst()   // Suns
+            emberAndExtra.getSecond(), // Electrons
+            emberAndExtra.getFirst(),  // Embers
+            wispAndExtra.getFirst()   // Wisps
         );
     }
 
     @Contract("_, _, _ -> this")
-    protected TripleCoinSliderWidget withValues(int electron, int cog, int sun) {
+    protected TripleCoinSliderWidget withValues(int electron, int ember, int wisp) {
         values[0] = electron;
-        values[1] = cog;
-        values[2] = sun;
+        values[1] = ember;
+        values[2] = wisp;
         return this;
     }
 
@@ -322,6 +322,6 @@ public class TripleCoinSliderWidget extends AbstractSimiWidget {
 
     @FunctionalInterface
     public interface EditHandler {
-        void apply(int electrons, int cogs, int suns);
+        void apply(int electrons, int embers, int wisps);
     }
 }

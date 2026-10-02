@@ -2,9 +2,9 @@
   "values": [
     "numismatics:electron",
     "numismatics:ion",
-    "numismatics:sprocket",
-    "numismatics:cog",
-    "numismatics:crown",
-    "numismatics:sun"
+    "numismatics:spark",
+    "numismatics:ember",
+    "numismatics:flame",
+    "numismatics:wisp"
   ]
 }

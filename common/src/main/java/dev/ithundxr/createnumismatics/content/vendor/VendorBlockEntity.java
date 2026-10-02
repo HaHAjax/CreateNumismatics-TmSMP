@@ -433,10 +433,10 @@ public class VendorBlockEntity extends SmartBlockEntity implements Trusted, Trus
         }
 
         Couple<Integer> referenceAndElectrons = NumismaticsConfig.common().referenceCoin.get().convert(getTotalPrice());
-        int cogs = referenceAndElectrons.getFirst();
+        int embers = referenceAndElectrons.getFirst();
         int electrons = referenceAndElectrons.getSecond();
         MutableComponent balanceLabel = Component.translatable("block.numismatics.vendor.tooltip.price",
-            TextUtils.formatInt(cogs), NumismaticsConfig.common().referenceCoin.get().getName(cogs), electrons);
+            TextUtils.formatInt(embers), NumismaticsConfig.common().referenceCoin.get().getName(embers), electrons);
 
         // Selling/Buying
         Lang.builder(Numismatics.MOD_ID)

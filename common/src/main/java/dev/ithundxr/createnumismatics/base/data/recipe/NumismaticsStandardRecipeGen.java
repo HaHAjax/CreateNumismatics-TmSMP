@@ -18,11 +18,9 @@
 
 package dev.ithundxr.createnumismatics.base.data.recipe;
 
-import com.simibubi.create.Create;
 import com.simibubi.create.api.data.recipe.BaseRecipeProvider;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import dev.ithundxr.createnumismatics.Numismatics;
-import dev.ithundxr.createnumismatics.base.data.recipe.Ingredients;
 import dev.ithundxr.createnumismatics.registry.NumismaticsBlocks;
 import dev.ithundxr.createnumismatics.registry.NumismaticsItems;
 import net.createmod.catnip.registry.RegisteredObjectsHelper;
@@ -75,9 +73,9 @@ public class NumismaticsStandardRecipeGen extends BaseRecipeProvider {
             .requires(Ingredients.electronTube()));
 
     GeneratedRecipe BANKING_GUIDE = create(NumismaticsItems.BANKING_GUIDE)
-        .unlockedBy(Ingredients::cogCoin)
+        .unlockedBy(Ingredients::emberCoin)
         .viaShapeless(b -> b
-            .requires(Ingredients.cogCoin())
+            .requires(Ingredients.emberCoin())
             .requires(Ingredients.sturdySheet())
             .requires(Ingredients.paper()));
 

@@ -30,10 +30,10 @@ public class CServer extends ConfigBase {
     
     public final ConfigInt starterElectrons = i(0, 0, "starter_electrons");
     public final ConfigInt starterIons = i(0, 0, "starter_ions");
-    public final ConfigInt starterSprockets = i(0, 0, "starter_sprockets");
-    public final ConfigInt starterCogs = i(0, 0, "starter_cogs");
-    public final ConfigInt starterCrowns = i(0, 0, "starter_crowns");
-    public final ConfigInt starterSuns = i(0, 0, "starter_suns");
+    public final ConfigInt starterSparks = i(0, 0, "starter_sparks");
+    public final ConfigInt starterEmbers = i(0, 0, "starter_embers");
+    public final ConfigInt starterFlames = i(0, 0, "starter_flames");
+    public final ConfigInt starterWisps = i(0, 0, "starter_wisps");
 
     public final ConfigGroup computerCraft = group(0, "computerCraft", Comments.computerCraft);
 
